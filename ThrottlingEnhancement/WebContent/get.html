@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>INDEX page</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<script
+	src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<script src="script.js"></script>
+<style>
+ #response {
+    height: 480px;
+    width: 100%;
+    background-color: rgb(235,235,235);
+}
+</style>
+</head>
+<body ng-app="mainApp" ng-controller="ctrl">
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse"
+					data-target="#myNavbar">
+					<span class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="index.html">ELASTICSearch</a>
+			</div>
+
+		
+
+		<div class="nav navbar-nav navbar-right">
+			<li><a href="#">GET</a></li>
+		</div>
+		</div>
+	</nav>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<center>
+		<button ng-click="ge()">GET</button>
+		<button ng-click="pos()">POST</button>
+		<button ng-click="dele()">DELETE</button>
+	</center>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-sm-2"></div>
+			<div class="col-sm-8">
+			<br>
+			<br>
+			<form name="getForm" novalidate>
+	<tr><td><input type="button" name="get" value="GET" readonly/></td>
+	<td><input type="text" name="urls" ng-model="ctrl.url" id="url" placeholder="Ex. /index/type/_id?..."/></td><br>
+	<td><button ng-click="sendget(getForm)" class="form-control">SEND</button></td>
+	</tr>
+	</form>
+	</div>
+	</div>
+	</div><br>
+	<br>
+	<br>
+	<br>
+<div class="container">
+<div id="response"></div>
+</div>
+</body>
+</html>
