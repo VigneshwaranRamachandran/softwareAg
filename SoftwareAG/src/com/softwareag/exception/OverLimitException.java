@@ -1,0 +1,1 @@
+package com.softwareag.exception;import java.io.PrintStream;public class OverLimitException extends RuntimeException {  static { System.out.println("over load, exist the limitation"); }    private static final long serialVersionUID = 1L;  public OverLimitException() {}}

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>INDEX page</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<script
+	src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<script src="script.js"></script>
+<style>
+ #response {
+    height: 350px;
+    width: 100%;
+    background-color: rgb(235,235,235);
+}
+#key{
+height:100px;
+width:50%;
+background-color: powderblue;
+}
+</style>
+</head>
+<body ng-app="mainApp" ng-controller="ctrl">
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse"
+					data-target="#myNavbar">
+					<span class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="index.html">ELASTICSearch</a>
+			</div>
+
+		
+
+		<div class="nav navbar-nav navbar-right">
+			<li><a href="#">GET</a></li>
+		</div>
+		</div>
+	</nav>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-sm-2"></div>
+			<div class="col-sm-8">
+			<br>
+			<br>
+			<form name="getApiForm"><table><tr><td>
+			<input type="text" name="appname" class="form-control" id="api" placeholder="enter-ur-api-name" required/></td><td>
+			<button ng-click="getApi(getApiForm)" class="form-control">GENERATE API-KEY</button></td></tr>
+			</table>
+		    </form>
+			<br>
+			
+		COPY THIS API-KEY	<div id="key"></div>
+		
+			
+			<form name="throtlingForm" novalidate><table align="right">
+			<tr>
+	<td><input type="number" class="form-control" min="1" name="count" id="limitCount" placeholder="limit-Count"/></td></tr>
+	<tr>
+	<td><input type="number" class="form-control" min="1" max="59" name="min" id="limitMin"  placeholder="hit-per"/></td></tr>
+	<tr>
+	<td><select class="form-control" id="limitperiods">limit periods
+  <option value="MINUTES">MINUTES</option>
+  <option value="HOURS">HOURS</option>
+  <option value="DAYS">DAYS</option>
+  </select></td>
+</tr>
+	<td><button ng-click="setLimit(throtlingForm)" class="form-control">SAVE</button></td>
+	   </table>            
+	</form>
+	</div>
+	</div>
+	</div><br>
+	<br>
+	<br>
+	<br>
+<div class="container">
+<div id="response"></div>
+</div>
+</body>
+</html>
